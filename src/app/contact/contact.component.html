@@ -1,0 +1,134 @@
+ <section class="section contact">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-card">
+              <div class="icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+
+              <div class="info">
+                <h3>Our Location</h3>
+                <p>500 N Bell Ave #109, Denton, TX 76209, United States</p>
+                <a href="https://maps.google.com" target="_blank" class="btn btn-sm">Get Directions</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+
+              <div class="info">
+                <h3>Phone Number</h3>
+                <p>+1 940-612-9127</p>
+                <a href="tel:+19406129127" class="btn btn-sm">Call Now</a>
+              </div>
+            </div>
+
+
+            <div class="contact-card">
+              <div class="icon">
+                <i class="fas fa-clock"></i>
+              </div>
+
+              <div class="info">
+                <h3>Opening Hours</h3>
+                <ul class="hours-list">
+                  <li><span>Monday - Friday:</span> 9:00 AM - 7:00 PM</li>
+                  <li><span>Saturday:</span> 8:00 AM - 5:00 PM</li>
+                  <li><span>Sunday:</span> Closed</li>
+                </ul>
+              </div>
+            </div>
+
+
+            <div class="map">
+              <img src="https://images.pexels.com/photos/2330137/pexels-photo-2330137.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Location Map">
+              <div class="map-overlay">
+                <a href="https://maps.google.com" target="_blank" class="btn">View Larger Map</a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="contact-form">
+            <h3>Book an Appointment</h3>
+            <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" formControlName="name" placeholder="Your name">
+                <div class="error" *ngIf="submitted && f['name'].errors">
+                  <span *ngIf="f['name'].errors['required']">Name is required</span>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" formControlName="email" placeholder="Your email">
+                <div class="error" *ngIf="submitted && f['email'].errors">
+                  <span *ngIf="f['email'].errors['required']">Email is required</span>
+                  <span *ngIf="f['email'].errors['email']">Enter a valid email</span>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" formControlName="phone" placeholder="Your phone">
+                <div class="error" *ngIf="submitted && f['phone'].errors">
+                  <span *ngIf="f['phone'].errors['required']">Phone is required</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="service">Select Service</label>
+                <select id="service" formControlName="service">
+                  <option value="">Select a service</option>
+                  <option value="haircut">Haircut</option>
+                  <option value="haircut-beard">Haircut & Beard Trim</option>
+                  <option value="shave">Hot Towel Shave</option>
+                  <option value="kids">Kid's Haircut</option>
+                  <option value="color">Hair Coloring</option>
+                  <option value="style">Styling & Treatment</option>
+                </select>
+
+                <div class="error" *ngIf="submitted && f['service'].errors">
+                  <span *ngIf="f['service'].errors['required']">Service is required</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" formControlName="date">
+                <div class="error" *ngIf="submitted && f['date'].errors">
+                  <span *ngIf="f['date'].errors['required']">Date is required</span>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label for="time">Preferred Time</label>
+                <input type="time" id="time" formControlName="time">
+                <div class="error" *ngIf="submitted && f['time'].errors">
+                  <span *ngIf="f['time'].errors['required']">Time is required</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Additional Notes</label>
+                <textarea id="message" formControlName="message" rows="3" placeholder="Any special requests?"></textarea>
+              </div>
+              <button type="submit" class="btn btn-full">Book Appointment</button>
+            </form>
+            
+            <div class="form-success" *ngIf="submitted && success">
+              <i class="fas fa-check-circle"></i>
+              <h3>Appointment Request Sent!</h3>
+              <p>We'll confirm your appointment shortly via phone or email.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

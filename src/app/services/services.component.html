@@ -1,0 +1,22 @@
+ <section class="section services">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+          <div class="service-card" *ngFor="let service of services">
+            <div class="service-icon">
+              <i [class]="service.icon"></i>
+            </div>
+            <div class="service-content">
+              <h3>{{ service.title }}</h3>
+              <p>{{ service.description }}</p>
+              <div class="service-price">{{ service.price }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="services-cta">
+          <p>Experience premium barbering services in a relaxed atmosphere</p>
+          <a href="#contact" class="btn">Book Your Appointment</a>
+        </div>
+      </div>
+    </section>
+  

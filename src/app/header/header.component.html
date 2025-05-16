@@ -1,0 +1,32 @@
+<header [class.scrolled]="scrolled">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <a href="#">
+              <h2>FAMA<span class="text-primary">BARBER</span></h2>
+            </a>
+          </div>
+          <nav>
+            <ul [class.active]="navActive">
+              <li><a href="#" (click)="closeNav()">Home</a></li>
+              <li><a href="#about" (click)="closeNav()">About</a></li>
+              <li><a href="#services" (click)="closeNav()">Services</a></li>
+              <li><a href="#gallery" (click)="closeNav()">Gallery</a></li>
+              <li><a href="#contact" (click)="closeNav()">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="contact-info">
+            <a href="tel:+19406129127" class="phone">
+              <i class="fas fa-phone"></i>
+              <span>+1 940-612-9127</span>
+            </a>
+            <a href="#contact" class="btn">Book an Appointment</a>
+          </div>
+          <div class="mobile-toggle" (click)="toggleNav()">
+            <span [class.active]="navActive"></span>
+            <span [class.active]="navActive"></span>
+            <span [class.active]="navActive"></span>
+          </div>
+        </div>
+      </div>
+    </header>
